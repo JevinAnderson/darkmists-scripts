@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 
 const lib = require("../lib");
-
-lib.greet().then(console.log).then(process.exit);
+const directory = require("../lib/directory");
 
 function parseArgs() {
   const results = {};
   const args = process.argv.slice(2);
-  console.log("pre-parsed args", args);
   const inputKey = {
     hasValue: true,
     key: "input"
+  };
+  const mapKey = {
+    key: "maps"
   };
   const outputKey = {
     hasValue: true,
@@ -19,6 +20,8 @@ function parseArgs() {
   const mapping = {
     "-i": inputKey,
     "--input": inputKey,
+    "-m": mapKey,
+    "--maps": mapKey,
     "-o": outputKey,
     "--output": outputKey
   };
@@ -57,3 +60,7 @@ function parseArgs() {
 
 const args = parseArgs();
 console.log(" args", args);
+
+if (args.input) {
+  directory.getDirectoryContents(args.input).then(console.log);
+}
