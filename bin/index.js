@@ -20,7 +20,7 @@ if (args.maps) {
 
 Promise.all(tasks)
   .then((results) => {
-    console.log("Tasks completed: results", results);
+    console.log("Tasks completed: results", JSON.stringify(results, null, 2));
   })
   .catch(console.error)
   .then(process.exit);
