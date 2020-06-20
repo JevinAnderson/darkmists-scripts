@@ -28,5 +28,7 @@ You can use the short or long name of the command, and separate input with `` or
 
 ### Example
 
+```
 dmscript -i ./areafiles -o ~/Desktop/memorial/areas -m
 dmscript --input=./areafiles -output=~/Desktop/memorial/areas --maps
+```
