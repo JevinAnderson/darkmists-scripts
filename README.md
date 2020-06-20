@@ -2,8 +2,8 @@
 
 ## Installation
 
-Install node
-globally install the node module darkmists-scripts
+1. Install node
+2. globally install the node module darkmists-scripts
 
 ```
 npm install -g darkmists-scripts
